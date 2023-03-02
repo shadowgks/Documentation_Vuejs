@@ -19,7 +19,12 @@
         <button v-on:click="changeTitle('oum')">test</button> -->
 
         <!-- Condition Rendering -->
-        <button v-on:click="toggle">Toggle</button>
+        <button v-on:click="toggle">
+            <span v-if="myInfo">Hide</span>
+            <span v-if="!myInfo">Show</span>
+        </button>
+        <!-- style css display block if true && display none if false -->
+        <h3 v-show="myInfo">Hi guys</h3>
 
     </div>
 

@@ -18,10 +18,10 @@
 <body>
     <div id="app">
         <!-- Other mouse event -->
-        <div class="box" v-on:mouseover="mouseEvent">mouseover</div>
+        <div class="box" v-on:mouseover="mouseEvent($event,5)">mouseover</div>
         <div class="box" v-on:mouseleave="mouseEvent">mouseout</div>
-        <div class="box" v-on:click="mouseEvent">click</div>
-        <div class="box"></div>
+        <div class="box" v-on:click="mouseEvent">clicked</div>
+        <div class="box" v-on:mousemove="mouseMove">Possition - {{x}} {{y}}</div>
     </div>
 
     <script src="app.js"></script>

@@ -7,20 +7,29 @@ const app = Vue.createApp({
             x: 0,
             y: 0,
             //E mouse event
+
+            //---------
             //B Outputting lists (v-for)
             Books: [
                 {
                     title: 'title1',
                     author: 'auther1',
-                    pages: 30
+                    pages: 30,
+                    img : 'assets/1.jfif'
                 },
                 {
                     title: 'title2',
                     author: 'auther2',
-                    pages: 100
+                    pages: 100,
+                    img : 'assets/2.jpg'
                 },
-            ]
+            ],
             //E Outputting lists (v-for)
+
+            //---------
+            //B Attribute binding
+            url : 'https://www.google.com/'
+            //E Attribute binding
         }
     },
     methods: {

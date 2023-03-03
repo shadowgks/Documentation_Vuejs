@@ -12,6 +12,9 @@
             padding: 30px;
             margin: 30px;
         }
+        .img{
+            width: 100px;
+        }
     </style>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -23,15 +26,17 @@
         <div class="box" v-on:click="mouseEvent">clicked</div>
         <div class="box" v-on:mousemove="mouseMove">Possition - {{x}} {{y}}</div> -->
         <!--E Other mouse event -->
-        
-        <!-- ----------------------------------------------------------------------------------- -->
-        <!-- B Outputting lists (v-for) -->
+
+        <!-- ----------- -->
+        <!-- B Outputting lists (v-for) and  Attribute binding -->
         <ul v-for="book in Books">
+            <img class="img" v-bind:src="book.img" v-bind:alt="book.img">
             <li>{{book.title}}</li>
             <li>{{book.author}}</li>
             <li>{{book.pages}}</li>
         </ul>
-        <!-- e Outputting lists (v-for) -->
+        <a v-bind:href="url">Google</a>
+        <!-- e Outputting lists (v-for) and Attribute binding-->
 
     </div>
 

@@ -17,11 +17,22 @@
 </head>
 <body>
     <div id="app">
-        <!-- Other mouse event -->
-        <div class="box" v-on:mouseover="mouseEvent($event,5)">mouseover</div>
+        <!--B Other mouse event -->
+        <!-- <div class="box" v-on:mouseover="mouseEvent($event,5)">mouseover</div>
         <div class="box" v-on:mouseleave="mouseEvent">mouseout</div>
         <div class="box" v-on:click="mouseEvent">clicked</div>
-        <div class="box" v-on:mousemove="mouseMove">Possition - {{x}} {{y}}</div>
+        <div class="box" v-on:mousemove="mouseMove">Possition - {{x}} {{y}}</div> -->
+        <!--E Other mouse event -->
+        
+        <!-- ----------------------------------------------------------------------------------- -->
+        <!-- B Outputting lists (v-for) -->
+        <ul v-for="book in Books">
+            <li>{{book.title}}</li>
+            <li>{{book.author}}</li>
+            <li>{{book.pages}}</li>
+        </ul>
+        <!-- e Outputting lists (v-for) -->
+
     </div>
 
     <script src="app.js"></script>

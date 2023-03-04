@@ -44,7 +44,7 @@
 
         <!-- ----------- -->
         <!-- B Outputting lists (v-for) and  Attribute binding -->
-        <ul v-for="book in Books" v-bind:class="{fav:book.my_fav}" v-on:click="toggle(book)">
+        <ul v-for="book in filerBooks" v-bind:class="{fav:book.my_fav}" v-on:click="toggle(book)">
             <img class="img" v-bind:src="book.img" v-bind:alt="book.img">
             <li>{{book.title}}</li>
             <li>{{book.author}}</li>

@@ -10,7 +10,7 @@ const app = Vue.createApp({
 
             //---------
             //B Outputting lists (v-for)
-            Books: [
+            books: [
                 {
                     title: 'title1',
                     author: 'auther1',
@@ -30,12 +30,8 @@ const app = Vue.createApp({
 
             //---------
             //B Attribute binding
-            url: 'https://www.google.com/'
+            url: 'https://www.google.com/',
             //E Attribute binding
-
-            //---------
-            //B Challenge: toggling favs
-            //E Challenge: toggling favs
         }
     },
     methods: {
@@ -54,12 +50,19 @@ const app = Vue.createApp({
 
         //---------
         //B Challenge: toggling favs
-        toggle(book){
-            // this.books.my_fav[0] = !this.books.my_fav[0];
+        toggle(book) {
             book.my_fav = !book.my_fav;
         },
         //E Challenge: toggling favs
+    },
+    //---------
+    //B Computed properties
+    computed: {
+        filerBooks() {
+            return this.books.filter((book) => book.my_fav);
+        }
     }
+    //E Computed properties
 });
 
 //Parent

@@ -15,14 +15,14 @@ const app = Vue.createApp({
                     title: 'title1',
                     author: 'auther1',
                     pages: 30,
-                    img : 'assets/1.jfif',
-                    my_fav : false
+                    img: 'assets/1.jfif',
+                    my_fav: false
                 },
                 {
                     title: 'title2',
                     author: 'auther2',
                     pages: 100,
-                    img : 'assets/2.jpg',
+                    img: 'assets/2.jpg',
                     my_fav: true
                 },
             ],
@@ -30,8 +30,12 @@ const app = Vue.createApp({
 
             //---------
             //B Attribute binding
-            url : 'https://www.google.com/'
+            url: 'https://www.google.com/'
             //E Attribute binding
+
+            //---------
+            //B Challenge: toggling favs
+            //E Challenge: toggling favs
         }
     },
     methods: {
@@ -45,8 +49,16 @@ const app = Vue.createApp({
         mouseMove(e) {
             this.x = e.offsetX;
             this.y = e.offsetY;
-        }
+        },
         //E mouse event
+
+        //---------
+        //B Challenge: toggling favs
+        toggle(book){
+            // this.books.my_fav[0] = !this.books.my_fav[0];
+            book.my_fav = !book.my_fav;
+        },
+        //E Challenge: toggling favs
     }
 });
 

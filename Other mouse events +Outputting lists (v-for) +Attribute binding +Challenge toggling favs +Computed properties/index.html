@@ -12,13 +12,23 @@
             padding: 30px;
             margin: 30px;
         }
-        .img{
-        <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>Title!</strong> Alert body ...
-        </div>
-        
+        .img{        
             width: 100px;
+        }
+        ul{
+            background: #929292;
+            display: flex;
+            text-decoration: none;
+            align-items: center;
+            cursor: pointer;
+        }
+        li{
+            list-style: none;
+            margin-left: 12px;
+        }
+        .fav{
+            background-color: red;
+            color: #fff;
         }
     </style>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -34,8 +44,8 @@
 
         <!-- ----------- -->
         <!-- B Outputting lists (v-for) and  Attribute binding -->
-        <ul v-for="book in Books">
-            <img v-bind:class="{img:book.my_fav}" v-bind:src="book.img" v-bind:alt="book.img">
+        <ul v-for="book in Books" v-bind:class="{fav:book.my_fav}" v-on:click="toggle(book)">
+            <img class="img" v-bind:src="book.img" v-bind:alt="book.img">
             <li>{{book.title}}</li>
             <li>{{book.author}}</li>
             <li>{{book.pages}}</li>

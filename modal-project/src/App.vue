@@ -1,37 +1,14 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
+import Modal from "./components/Modal.vue";
 </script>
 
 <template>
-  <header>
-    <input type="text" ref="test" />
-    <button v-on:click="buttonAddClass">Submit</button>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-    <div class="wrapper">
-      <HelloWorld msg="You did it Yeep!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <Modal />
 </template>
 
 <script>
 export default {
-  methods: {
-    buttonAddClass() {
-      this.$refs.test.classList.add('active')
-      console.log(this.$refs.test);
-    },
-  },
+  
 };
 </script>
 

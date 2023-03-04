@@ -15,13 +15,15 @@ const app = Vue.createApp({
                     title: 'title1',
                     author: 'auther1',
                     pages: 30,
-                    img : 'assets/1.jfif'
+                    img : 'assets/1.jfif',
+                    my_fav : false
                 },
                 {
                     title: 'title2',
                     author: 'auther2',
                     pages: 100,
-                    img : 'assets/2.jpg'
+                    img : 'assets/2.jpg',
+                    my_fav: true
                 },
             ],
             //E Outputting lists (v-for)

@@ -4,9 +4,15 @@ import Modal from "./components/Modal.vue";
 
 <template>
   <h1>test</h1>
-  <button v-on:click="toggleModal">Show Modal</button>
+  <button v-on:click.shift="toggleModal">Show Modal(shift)</button>
   <div v-if="showModal">
-    <Modal v-bind:header="header" :text="text" theme="sale" @close='toggleModal'/>
+    <Modal theme="sale" @close='toggleModal'>
+      <template v-slot:links>
+        <a href="">Google</a>
+        <a href="">Facebook</a>
+      </template>
+      <!-- <h1>VueJS</h1> -->
+    </Modal>
   </div>
 </template>
 

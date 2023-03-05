@@ -5,6 +5,7 @@
             <p>{{text}}</p>
             <slot>default content</slot>
             <slot name="links"></slot>
+            <slot name="links2"></slot>
         </div>
     </div>
 </template>

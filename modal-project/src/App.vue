@@ -3,13 +3,19 @@ import Modal from "./components/Modal.vue";
 </script>
 
 <template>
-  <Modal />
+  <h1>test</h1>
+  <Modal v-bind:header="header" :text="text" theme='sale'/>
 </template>
 
 <script>
 export default {
-  
-};
+  data(){
+    return {
+      header : "added props success",
+      text : "Modal Content",
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -37,10 +43,6 @@ header {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
-
-  h1 {
-    color: red;
   }
 }
 </style>

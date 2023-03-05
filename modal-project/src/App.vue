@@ -4,18 +4,27 @@ import Modal from "./components/Modal.vue";
 
 <template>
   <h1>test</h1>
-  <Modal v-bind:header="header" :text="text" theme='sale'/>
+  <button v-on:click="toggleModal">Show Modal</button>
+  <div v-if="showModal">
+    <Modal v-bind:header="header" :text="text" theme="sale" @close='toggleModal'/>
+  </div>
 </template>
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      header : "added props success",
-      text : "Modal Content",
-    }
-  }
-}
+      header: "added props success",
+      text: "Modal Content",
+      showModal: false,
+    };
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+  },
+};
 </script>
 
 <style scoped>

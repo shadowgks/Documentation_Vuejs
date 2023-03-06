@@ -1,7 +1,7 @@
 <template>
-    <div class="block" v-if="showBlock" @click="stopTimer"> 
-        <p>Click Here</p>
-    </div>
+  <div class="block" v-if="showBlock" @click="stopTimer">
+    <p>Click Here</p>
+  </div>
 </template>
 
 <script>
@@ -10,30 +10,38 @@ export default {
     data() {
         return {
             showBlock : false,
+            timer : null,
+            reactionTimer : 0,
         }
     },
     mounted() {
         setTimeout(() => {
             this.showBlock = !this.showBlock;
+            this.startTimer();
         }, this.delay);
     },
-    updated() {
-        
+    methods: {
+        startTimer(){
+            this.timer = setInterval(() => {
+            this.reactionTimer += 10;
+            }, 10);
+        },
+        stopTimer(){
+            clearInterval(this.timer);
+            this.$emit('end',this.reactionTimer);
+        }
     },
-    unmounted(){
-        
-    }
 };
 </script>
 
 <style>
-.block{
-    width: 100%;
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    padding: 60px;
-    margin: 20px auto;
-    cursor: pointer;
+.block {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 60px;
+  margin: 20px auto;
+  cursor: pointer;
 }
 </style>
